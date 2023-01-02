@@ -11,7 +11,11 @@ public class PlayerInfo : MonoBehaviour, IHittable
     [SerializeField] private float maxHp;       
     [SerializeField] private float curHp;
     [SerializeField] private int myTurn;        //°ø°Ý È½¼ö
-   
+
+    private void OnEnable()
+    {
+        curHp = maxHp;
+    }
     public float HP
     {
         get { return curHp; }

@@ -5,14 +5,15 @@ using UnityEngine.AI;
 
 public enum SkillType
 {
-    Attack, Buff, Debuff, Defense
+    Attack, Defense, Buff, Debuff
 }
 public class Skill : MonoBehaviour
 {
     private Animator anim;
     private NavMeshAgent agent;
 
-    [Header ("Skill Info")]
+    [Header("Skill Info")]
+    [SerializeField] private KeyCode keyCode;
     [SerializeField] private SkillType skillType;
     [SerializeField] private string skillName;
     [SerializeField] private float damage;
