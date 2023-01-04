@@ -2,6 +2,28 @@ using System.Linq;
 using UnityEngine;
 using Newtonsoft.Json;
 
+
+//TBG Project 공부해야할것
+
+//어드레서블 에셋
+
+//system.Linq
+
+//readonly, const
+
+//IEquatable<T>
+
+//ReferenceEquals
+
+//GetHashCode
+
+//람다식
+
+//JsonConvert.SerializeObject(this, Formatting.Indented);
+
+//FirstOrDefault(Linq)
+
+//3항 연산자
 namespace Map
 {
     public class MapManager : MonoBehaviour
