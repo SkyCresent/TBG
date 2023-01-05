@@ -20,19 +20,19 @@ namespace Map
 
         // 맵을 구성하는데 사용할 수 있는 MapConfig 스크립트 목록
         public List<MapConfig> allMapConfigs;
-        [SerializeField] private GameObject nodePrefab;
-        [SerializeField] private float orientationOffset;                 //화면 가장자리에서 지도의 시작/끝 노드 offset
+        public GameObject nodePrefab;
+        public float orientationOffset;                 //화면 가장자리에서 지도의 시작/끝 노드 offset
 
         [Header("Background Set")]
-        [SerializeField] private Sprite background;     // null이면 배경이 안보임
-        [SerializeField] private Color backgroundColor = Color.white;
-        [SerializeField] private float xSize;
-        [SerializeField] private float yOffset;
+        public Sprite background;     // null이면 배경이 안보임
+        public Color backgroundColor = Color.white;
+        public float xSize;
+        public float yOffset;
 
         [Header("Line Set")]
-        [SerializeField] private GameObject linePrefab;
-        [SerializeField, Range(3, 10)] private int linePointsCount = 10;
-        [SerializeField] private float offsetFromNodes = 0.5f;              // 노드에서 선 시작점 까지의 거리
+        public GameObject linePrefab;
+        [Range(3, 10)] public int linePointsCount = 10;
+        public float offsetFromNodes = 0.5f;              // 노드에서 선 시작점 까지의 거리
 
         [Header("Colors")]
         public Color visitedColor = Color.white;      //노드 방문 or 갈 수 있는곳 색상

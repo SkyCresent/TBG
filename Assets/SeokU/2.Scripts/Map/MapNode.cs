@@ -14,9 +14,9 @@ namespace Map
 {
     public class MapNode : MonoBehaviour
     {
-        [SerializeField] private SpriteRenderer sr;
-        [SerializeField] private SpriteRenderer visitedCheck;
-        [SerializeField] private Image visitedCheckImage;
+        public SpriteRenderer sr;
+        public SpriteRenderer visitedCheck;
+        public Image visitedCheckImage;
 
         public Node node { get; private set; }
         public NodeBlueprint blueprint { get; private set; }

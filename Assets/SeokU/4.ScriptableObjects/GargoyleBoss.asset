@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd2d887c25bf8404899ba138d5142500, type: 3}
   m_Name: GargoyleBoss
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  nodeType: 0
+  sprite: {fileID: 21300000, guid: 23381931656768d4ca4e48cd8f6d5fef, type: 3}
+  nodeType: 5
