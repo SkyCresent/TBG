@@ -1,11 +1,13 @@
 using System.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Json.Net;
+using UnityEngine;
 
 namespace Map
 {
     public class Map
-    {
+    {        
         public List<Node> nodes;
         public List<Point> path;
         public string bossNodeName;
@@ -27,7 +29,7 @@ namespace Map
             var bossNode = GetBossNode();
             var firstLayerNode = nodes.FirstOrDefault(n => n.point.y == 0);
             if (bossNode == null || firstLayerNode == null)
-                return 0;
+                return 0f;
 
             return bossNode.position.y - firstLayerNode.position.y;
         }
@@ -38,6 +40,6 @@ namespace Map
         public string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
+        }        
     }
 }

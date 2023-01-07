@@ -8,8 +8,7 @@ namespace Map
     {
         private static MapConfig config;
 
-        private static readonly List<NodeType> randomNodes = new List<NodeType>
-         { NodeType.Random, NodeType.Store, NodeType.Treasure, NodeType.NormalEnemy, NodeType.RestSite };
+        private static readonly List<NodeType> randomNodes = new List<NodeType> { NodeType.Random, NodeType.Store, NodeType.Treasure, NodeType.NormalEnemy, NodeType.RestSite };
 
         private static List<float> layerDistances;
         private static List<List<Point>> paths;
@@ -19,7 +18,7 @@ namespace Map
 
         public static Map GetMap(MapConfig _config)
         {
-            if (config == null)
+            if (_config == null)
             {
                 Debug.LogWarning("Config was null in MapGenerator.Generate()");
                 return null;
@@ -128,11 +127,11 @@ namespace Map
                     var topRight = GetNode(new Point(i + 1, j + 1));
                     if (topRight == null || topRight.HasNoConnections()) continue;
 
-                    Debug.Log("노드 연결 검사 : " + node.point);
+                    //Debug.Log("노드 연결 검사 : " + node.point);
                     if (!node.outgoing.Any(element => element.Equals(topRight.point))) continue;
                     if (!right.outgoing.Any(element => element.Equals(top.point))) continue;
 
-                    Debug.Log("교차노드 : " + node.point);
+                    //Debug.Log("교차노드 : " + node.point);
 
                     //교차노드를 찾았으면
                     //직접 연결 추가 : 

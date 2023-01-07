@@ -17,6 +17,7 @@ namespace Map
         public IntMinMax numOfStartingNodes;  //시작 노드 수
 
         public int extraPaths;                // 숫자를 높히면 더 많은 경로를 생성함
+        [Reorderable]
         public ListOfMapLayers layers;
 
         [System.Serializable]

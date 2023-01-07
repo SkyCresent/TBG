@@ -3,6 +3,7 @@ using System.Linq;
 using UnityEngine;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Json.Net;
 
 namespace Map
 {
@@ -11,11 +12,10 @@ namespace Map
         public readonly Point point;
         public readonly List<Point> incoming = new List<Point>();
         public readonly List<Point> outgoing = new List<Point>();
-        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonConverter(typeof(StringEnumConverter))]        
         public readonly NodeType nodeType;
         public readonly string blueprintName;
         public Vector2 position;
-
         public Node(NodeType nodeType, string blueprintName, Point point)
         {
             this.nodeType = nodeType;

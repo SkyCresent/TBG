@@ -61,6 +61,7 @@ namespace Map
         {
             if (firstParent != null)
                 Destroy(firstParent);
+
             mapNodes.Clear();
             lineConnections.Clear();
         }
@@ -133,7 +134,6 @@ namespace Map
             var blueprint = GetBlueprint(node.blueprintName);
             mapNode.SetUp(node, blueprint);
             mapNode.transform.localPosition = node.position;
-
             return mapNode;
         }
         //갈 수 있는 노드

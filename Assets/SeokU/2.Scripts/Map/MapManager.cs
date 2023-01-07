@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 using Newtonsoft.Json;
-
+using Json.Net;
 
 //TBG Project 공부해야할것
 
@@ -61,7 +61,8 @@ namespace Map
         {
             var map = MapGenerator.GetMap(config);
             currentMap = map;
-            Debug.Log(map.ToJson());
+            //Debug.Log(map.ToJson());
+            Debug.Log(JsonNet.Serialize(map));
             mapView.ShowMap(map);
         }
         public void SaveMap()

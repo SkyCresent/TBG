@@ -31,12 +31,12 @@ namespace Map
         {
             node = _node;
             blueprint = _blueprint;
-            sr.sprite = blueprint.sprite;
+            sr.sprite = _blueprint.sprite;
             if (_node.nodeType == NodeType.Boss) transform.localScale *= 1.5f;
             initScale = sr.transform.localScale.x;
             visitedCheck.color = MapView.Instance.visitedColor;
             visitedCheck.gameObject.SetActive(false);
-
+            SetState(NodeStates.Locked);
         }
         public void SetState(NodeStates state)
         {
