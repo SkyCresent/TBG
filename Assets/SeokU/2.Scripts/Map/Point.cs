@@ -38,6 +38,9 @@ namespace Map
             return Equals((Point)obj);
         }
 
+        // Equals를 재정의한 경우 GetHashCode도 재정의를 해야한다.
+        // System.Collenctions.HashTable 타입이나 System.Collections.Generic.Dictionary 타읍을 비롯한 모든 컬렉션에서는
+        // 두 객체가 동일한지 살피기 위해 같은 해시코드를 계산할 수 있는지 살피기 때문.
         public override int GetHashCode()
         {
             // checked : 상수값 들의 연산이나 변환에 의한 오버플로, 언더플로 검사를 컴파일러 단에서 걸러주도록 하는 키워드

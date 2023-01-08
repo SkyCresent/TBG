@@ -17,7 +17,10 @@ namespace Map
         public SpriteRenderer sr;
         public SpriteRenderer visitedCheck;
         public Image visitedCheckImage;
-
+        
+        // private set : 읽기전용
+        // private set : 외부에서는 접근을 못하지만 내부에서는 접근이 가능
+        // set이 없는형태 : 내부 외부 가릴것 없이 접근 불가
         public Node node { get; private set; }
         public NodeBlueprint blueprint { get; private set; }
 

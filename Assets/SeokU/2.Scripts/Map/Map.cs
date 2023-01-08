@@ -22,6 +22,7 @@ namespace Map
         }
         public Node GetBossNode()
         {
+            // linq.FirstOrDefault : 시퀀스의 첫번째 요소를 반환하거나, 요소가 없으면 기본값을 반환.
             return nodes.FirstOrDefault(n => n.nodeType == NodeType.Boss);
         }
         public float DistanceBetweenFirstAndLastLayers()

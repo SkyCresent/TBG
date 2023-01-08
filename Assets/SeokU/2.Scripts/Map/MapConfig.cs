@@ -9,6 +9,7 @@ namespace Map
     public class MapConfig : ScriptableObject
     {
         public List<NodeBlueprint> nodeBlueprints;
+        // Mathf.Max : a 와 b 중에 더 큰값을 반환
         public int gridWidth => Mathf.Max(numOfPreBossNodes.max, numOfStartingNodes.max);
 
         [OneLineWithHeader]

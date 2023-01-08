@@ -8,6 +8,11 @@ namespace Map
     {
         private static MapConfig config;
 
+        // 응용프로그램을 개발 할 때 버전 수정을 통해 변경될 가능성이 없는 고정값 숫자는 실제로 거의 없기 때문에 실질적으로는 const대신 전부 static readonly를 사용하는것이 추천된다.
+        // const는 매우 편리한 기능이지만 public으로 지정하지 않는 것이 좋다. private는 문제가없지만 public으로 지정해서 다른클래스가 참조하게 했을 경우에는 버전관리에 문제가 발생 할 위험이 있다.
+        // const로 정의한 값은 빌드할 때 값이 결정되므로 dll을 교체해도 exe는 여전히 예전값을 사용해서 동작하게된다.
+        // readonly일 경우에는 실행 할 때 값이 참조된다. 따라서 dll을 교체해도 프로그램이 새로운값을 사용해서 동작한다.
+        // 나중에 변경될 가능성이 있는 값을 상수로 지정해서 공개할 경우에는 const가 아닌 static readonly를 사용해아한다.
         private static readonly List<NodeType> randomNodes = new List<NodeType> { NodeType.Random, NodeType.Store, NodeType.Treasure, NodeType.NormalEnemy, NodeType.RestSite };
 
         private static List<float> layerDistances;
@@ -38,6 +43,11 @@ namespace Map
             SetUpConnections();
 
             RemoveCrossConnections();
+
+            // linq.SelectMany : 컬렉션 속성이 있는 일련의 객체가 있고 자식의 컬렉션의 각 항목을 하나씩 열거해야하는 경우 사용하는 연산자
+            // 쉽게말해 컬렉션 안에 다른 컬렉션이 저장되어 있고, 이중에서 subCollection의 데이터를 가져올때 사용.
+
+            // linq.Where : 조건에 따라 값의 시퀀스를 필터링
 
             // 연결되있는 모든 노드를 선택
             var nodesList = nodes.SelectMany(n => n).Where(n => n.incoming.Count > 0 || n.outgoing.Count > 0).ToList();

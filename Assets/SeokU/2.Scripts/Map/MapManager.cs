@@ -35,10 +35,12 @@ namespace Map
 
         private void Start()
         {
+            // PlayerPrefs.HasKey("string") : 키 값이 존재하면 true
             if (PlayerPrefs.HasKey("Map"))
             {
                 var mapJson = PlayerPrefs.GetString("Map");
                 var map = JsonConvert.DeserializeObject<Map>(mapJson);
+                // linq.Any : 집합 안에 조건에 맞는 요소가 하나라도 있는지 확인하는 메서드
                 // .Contains() 대신 써도됨
                 if (map.path.Any(p => p.Equals(map.GetBossNode().point)))
                 {
@@ -70,6 +72,7 @@ namespace Map
             if (currentMap == null) return;
 
             var json = JsonConvert.SerializeObject(currentMap);
+            //PlayerPrefs.SetString : string 저장코드
             PlayerPrefs.SetString("Map", json);
             PlayerPrefs.Save();
         }

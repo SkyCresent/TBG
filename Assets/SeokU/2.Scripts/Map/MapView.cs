@@ -24,21 +24,22 @@ namespace Map
         public float orientationOffset;                 //화면 가장자리에서 지도의 시작/끝 노드 offset
 
         [Header("Background Set")]
-        public Sprite background;     // null이면 배경이 안보임
+        public Sprite background;                       // null이면 배경이 안보임
         public Color backgroundColor = Color.white;
         public float xSize;
         public float yOffset;
 
         [Header("Line Set")]
         public GameObject linePrefab;
-        [Range(3, 10)] public int linePointsCount = 10;
-        public float offsetFromNodes = 0.5f;              // 노드에서 선 시작점 까지의 거리
+        [Range(3, 10)]
+        public int linePointsCount = 10;
+        public float offsetFromNodes = 0.5f;            // 노드에서 선 시작점 까지의 거리
 
         [Header("Colors")]
-        public Color visitedColor = Color.white;      //노드 방문 or 갈 수 있는곳 색상
-        public Color lockedColor = Color.gray;        //잠긴 노드 색상
-        public Color lineVisitedColor = Color.white;  //방문 or 사용 가능 색상
-        public Color lineLockedColor = Color.gray;    //잠긴 길 색상
+        public Color visitedColor = Color.white;        //노드 방문 or 갈 수 있는곳 색상
+        public Color lockedColor = Color.gray;          //잠긴 노드 색상
+        public Color lineVisitedColor = Color.white;    //방문 or 사용 가능 색상
+        public Color lineLockedColor = Color.gray;      //잠긴 길 색상
 
         private GameObject firstParent;
         private GameObject mapParent;
