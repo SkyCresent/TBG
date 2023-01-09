@@ -53,6 +53,7 @@ namespace Map
                 case NodeStates.Visited:
                     sr.DOKill();
                     sr.color = MapView.Instance.visitedColor;
+                    visitedCheck.gameObject.SetActive(true);
                     break;
                 case NodeStates.Attainable:
                     sr.color = MapView.Instance.lockedColor;

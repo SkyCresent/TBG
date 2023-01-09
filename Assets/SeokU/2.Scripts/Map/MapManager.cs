@@ -71,7 +71,10 @@ namespace Map
         {
             if (currentMap == null) return;
 
-            var json = JsonConvert.SerializeObject(currentMap);
+            var setting = new JsonSerializerSettings();
+            setting.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            
+            var json = JsonConvert.SerializeObject(currentMap, setting);
             //PlayerPrefs.SetString : string 저장코드
             PlayerPrefs.SetString("Map", json);
             PlayerPrefs.Save();

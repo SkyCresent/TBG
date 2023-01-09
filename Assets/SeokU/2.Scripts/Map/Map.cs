@@ -40,7 +40,10 @@ namespace Map
         }
         public string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            var setting = new JsonSerializerSettings();
+            setting.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+
+            return JsonConvert.SerializeObject(this, setting);
         }        
     }
 }
