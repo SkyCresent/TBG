@@ -63,8 +63,7 @@ namespace Map
         {
             var map = MapGenerator.GetMap(config);
             currentMap = map;
-            //Debug.Log(map.ToJson());
-            Debug.Log(JsonNet.Serialize(map));
+            Debug.Log(map.ToJson());
             mapView.ShowMap(map);
         }
         public void SaveMap()
